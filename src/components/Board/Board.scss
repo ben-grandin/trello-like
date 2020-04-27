@@ -1,6 +1,10 @@
 #board {
-  width: 100%;
-  height: 100%;
+  width: max-content;
+  height: 95%;
+  display: block;
+  flex-grow: 1;
+  overflow-y: auto;
+
 
   #landscape {
 	width: 100%;

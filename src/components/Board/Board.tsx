@@ -1,6 +1,7 @@
 import React, { FunctionComponent } from 'react';
 import './Board.scss';
-import landscape from "../../assets/landscape-river.jpg"
+import List from '../List/List';
+
 
 export interface BoardProps {
 
@@ -10,6 +11,6 @@ export interface BoardProps {
 export const Board: FunctionComponent<BoardProps> = () => {
 
 	return (<div id="board">
-		{/*<img id="landscape" src={landscape} alt="A wonderful landscape with a river"/>*/}
+		{["List 1","List 2","List 3","List 4"].map(i => <List key={i} title={i}/>)}
 	</div>);
 };
