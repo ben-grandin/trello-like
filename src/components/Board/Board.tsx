@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from 'react';
 import './Board.scss';
-import List from '../List/List';
+import { List } from '../List/List';
 
 
 export interface BoardProps {

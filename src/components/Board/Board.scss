@@ -1,13 +1,8 @@
 #board {
-  width: max-content;
-  height: 95%;
-  display: block;
-  flex-grow: 1;
-  overflow-y: auto;
+  width: 100%;
+  height: calc(100% - 35px);
+  display: flex;
+  overflow-y: scroll;
 
 
-  #landscape {
-	width: 100%;
-	height: 100%;
-  }
 }

@@ -1,6 +1,7 @@
 import React, { FunctionComponent } from 'react';
+import { ListHeader } from '../ListHeader/ListHeader';
+import { Card } from '../Card/Card';
 import './List.scss';
-import InputTitle from '../InputTitle/InputTitle';
 
 
 interface ListProps {
@@ -11,12 +12,13 @@ interface ListProps {
 
 export const List: FunctionComponent<ListProps> = ({ title }) => {
 
+	return (
+		<div className="list">
+			<ListHeader titleValue={title}/>
+			{
+				[{ title: 'Card 1' }, { title: 'Card 2' }]
+					.map(({ title }) => <Card title={title}/>)
+			}
+		</div>);
 
-	return <div className="list">
-		<div className="list-header">
-			<InputTitle titleValue={title}/>
-		</div>
-	</div>;
 };
-
-export default List;

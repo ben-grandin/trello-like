@@ -1,15 +1,10 @@
 .list {
-  width: 312px;
+  border-radius: 12px;
+  min-width: 272px;
+  width: 272px;
   height: 98%;
-  background-color: darkgrey;
+  background-color: #e0e3e7;
   margin: 5px;
-  display: inline-block;
 
-  .list-header {
-	padding: 8px 8px 8px 8px;
 
-	.list-title {
-	  color: black;
-	}
-  }
 }

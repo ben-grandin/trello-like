@@ -1,5 +1,5 @@
 import React, { FormEvent, FunctionComponent, useState } from 'react';
-
+import "./ListHeader.scss"
 
 interface InputTitleProps {
 	titleValue: string;
@@ -7,21 +7,19 @@ interface InputTitleProps {
 }
 
 
-export const InputTitle: FunctionComponent<InputTitleProps> = ({ titleValue }) => {
+export const ListHeader: FunctionComponent<InputTitleProps> = ({ titleValue }) => {
 	const [title, setTitle] = useState(titleValue);
 	const [showInput, setShowInput] = useState(false);
 
 	const toggleShowInput: (event: FormEvent) => void = (event) => {
-		console.log(event, event.type);
 		event.preventDefault();
 		setShowInput( !showInput);
 	};
 
-	// @ts-ignore
 	const onInputChange: ({ target: { value } }: { target: { value: string } }) => void = ({ target: { value } }) => {
 		setTitle(value);
 	};
-	return <div className="list">
+	return <div className="list-header">
 		{ !showInput && <h4 onClick={toggleShowInput} className="list-title">{title}</h4>}
 
 		{
@@ -33,5 +31,4 @@ export const InputTitle: FunctionComponent<InputTitleProps> = ({ titleValue }) =
 	</div>;
 };
 
-export default InputTitle;
 
