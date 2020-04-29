@@ -1,24 +1,28 @@
-import React, { FunctionComponent } from 'react';
+import React, { EventHandler, FC } from 'react';
 import { ListHeader } from '../ListHeader/ListHeader';
-import { Card } from '../Card/Card';
 import './List.scss';
+import { Card } from '../Card/Card';
 
 
 interface ListProps {
 	title: string;
-
+	toggleModal: EventHandler<any>
 }
 
 
-export const List: FunctionComponent<ListProps> = ({ title }) => {
+const List: FC<ListProps> = ({ title, toggleModal }) => {
 
 	return (
 		<div className="list">
 			<ListHeader titleValue={title}/>
+
+
 			{
 				[{ title: 'Card 1' }, { title: 'Card 2' }]
-					.map(({ title }) => <Card title={title}/>)
+					.map(({ title }) => <Card toggleModal={toggleModal} key={title} title={title}/>)
 			}
 		</div>);
 
 };
+
+export { List };

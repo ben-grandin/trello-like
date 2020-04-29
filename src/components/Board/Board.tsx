@@ -1,16 +1,18 @@
-import React, { FunctionComponent } from 'react';
+import React, { FC } from 'react';
 import './Board.scss';
 import { List } from '../List/List';
 
 
 export interface BoardProps {
-
+	toggleModal: () => void
 }
 
 
-export const Board: FunctionComponent<BoardProps> = () => {
+const Board: FC<BoardProps> = ({ toggleModal }) => {
 
 	return (<div id="board">
-		{["List 1","List 2","List 3","List 4"].map(i => <List key={i} title={i}/>)}
+		{['List 1', 'List 2', 'List 3', 'List 4'].map(i => <List key={i} title={i} toggleModal={toggleModal}/>)}
 	</div>);
 };
+
+export { Board };

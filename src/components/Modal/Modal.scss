@@ -1,0 +1,39 @@
+.parent-modal {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 999;
+  background-color: rgba(169, 169, 169, 0.68);
+
+
+}
+.modal {
+  z-index: 1000;
+
+  $height: 90%;
+  $width: 60%;
+  background-color: cornsilk;
+  position: absolute;
+
+  //	$header-size: 35px;
+  top: (100% - $height) / 2; // Is there a way to subtract header-size ?
+  right: (100% - $width) / 2;
+  height: $height;
+  width: $width;
+  min-width: 300px;
+  overflow: scroll;
+
+
+  //position: relative;
+
+  /* Define size depending or screen size
+  */
+  //bottom: 30%;
+  //left: 30%;
+
+  /*
+	May to define top, right, height and width with variable
+   */
+  //$size-modal: 25;
+}

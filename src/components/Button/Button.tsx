@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react';
+import React, { FC } from 'react';
 
 
 export interface ButtonProps {
@@ -6,7 +6,7 @@ export interface ButtonProps {
 }
 
 
-export const Button: FunctionComponent<ButtonProps> = () => {
+export const Button: FC<ButtonProps> = () => {
 
 	return (<></>);
 };

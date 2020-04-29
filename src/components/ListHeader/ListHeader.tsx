@@ -1,5 +1,6 @@
-import React, { FormEvent, FunctionComponent, useState } from 'react';
-import "./ListHeader.scss"
+import React, { FormEvent, FC, useState } from 'react';
+import './ListHeader.scss';
+
 
 interface InputTitleProps {
 	titleValue: string;
@@ -7,7 +8,7 @@ interface InputTitleProps {
 }
 
 
-export const ListHeader: FunctionComponent<InputTitleProps> = ({ titleValue }) => {
+export const ListHeader: FC<InputTitleProps> = ({ titleValue }) => {
 	const [title, setTitle] = useState(titleValue);
 	const [showInput, setShowInput] = useState(false);
 

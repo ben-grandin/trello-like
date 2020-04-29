@@ -1,15 +1,10 @@
-import React, { FunctionComponent } from 'react';
-import "./Card.scss"
+import React, { FC } from 'react';
+import './Card.scss';
 
-interface CardProps {
-	title: string
-}
-
-
-export const Card: FunctionComponent<CardProps> = ({ title }) => {
+export const Card: FC<any> = ({ toggleModal, title }) => {
 	return (
-		<div className="card">
-			<span className="card-title">{title}</span>
+		<div onClick={toggleModal}>
+			<button className="card">{title}</button>
 		</div>
 	);
 };

@@ -1,15 +1,17 @@
-import React, { FunctionComponent } from 'react';
+import React, { FC } from 'react';
 import './Header.scss';
 
 
-export interface HeaderProps {
+interface HeaderProps {
 
 }
 
 
-export const Header: FunctionComponent<HeaderProps> = () => {
+const Header: FC<HeaderProps> = () => {
 
 	return (<div id="header">
 		<h1>My awesome Trello Like project</h1>
 	</div>);
 };
+
+export { Header };
