@@ -38,7 +38,7 @@ const Modal: FC<ModalProps> = ({ toggleModal, className, children }) => {
 
 
 		>
-			<div onClick={event => {event.stopPropagation();}} className={`modal ${className}`}>
+			<div  className={`modal ${className}`} onClick={event => {event.stopPropagation();}}>
 				{children}
 			</div>
 		</div>
