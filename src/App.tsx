@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Header } from './components/Header/Header';
 import { Board } from './components/Board/Board';
 import './App.scss';
-import { Modal } from './components/Modal/Modal';
+import { ModalCard } from './components/Card/ModalCard/ModalCard';
 
 
 function App() {
@@ -31,7 +31,8 @@ function App() {
 		<div id="app">
 			<Header/>
 			<Board toggleModal={toggleModal}/>
-			{isModalVisible && <Modal toggleModal={toggleModal}/>}
+			{isModalVisible && <ModalCard toggleModal={toggleModal}/>}
+
 		</div>
 	);
 }

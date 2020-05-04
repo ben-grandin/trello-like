@@ -4,16 +4,16 @@ import './Modal.scss';
 
 interface ModalProps {
 	toggleModal: () => void
+	className?: string
 }
 
-const Modal: FC<ModalProps> = ({ toggleModal, children }) => {
 
-	return (<>
-			<div id={'parent-modal'} onClick={toggleModal} className="parent-modal"/>
-			<div className="modal">
+const Modal: FC<ModalProps> = ({ toggleModal, className, children }) => {
+	return (<div onClick={toggleModal} className={'parent-modal'}>
+			<div onClick={event => {event.stopPropagation();}} className={`modal ${className}`}>
 				{children}
 			</div>
-		</>
+		</div>
 	);
 };
 export { Modal };
