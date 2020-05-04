@@ -51,7 +51,7 @@ export const ListHeader: FC<InputTitleProps> = ({ titleValue, className = '' }) 
 		{
 			showInput &&
             <form onSubmit={onSubmitForm}>
-                <input ref={inputRef} value={tempTitle} onKeyDown={onEscapeInput} onChange={onInputChange}
+                <input onBlur={onSubmitForm} ref={inputRef} value={tempTitle} onKeyDown={onEscapeInput} onChange={onInputChange}
                        className='list-title'/>
             </form>
 		}
