@@ -7,7 +7,11 @@ interface InputTitleProps {
 
 }
 
-
+/*
+	ToDo:
+	 - Change input style,
+	 - Submit onEscape
+ */
 export const ListHeader: FC<InputTitleProps> = ({ titleValue }) => {
 	const [title, setTitle] = useState(titleValue);
 	const [showInput, setShowInput] = useState(false);

@@ -1,10 +1,13 @@
 .card {
   background-color: #ececec;
   border-radius: 5px;
-  margin: 10px;
   padding: 10px;
-  height: 150px;
-  width: 95%;
+  margin-bottom: 8px;
+  min-height: 50px;
+  max-width: 300px;
 
+  .card-title {
+   color: #192770;
+  }
 
 }

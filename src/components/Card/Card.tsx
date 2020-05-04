@@ -3,8 +3,8 @@ import './Card.scss';
 
 export const Card: FC<any> = ({ toggleModal, title }) => {
 	return (
-		<div onClick={toggleModal}>
-			<button className="card">{title}</button>
-		</div>
+		<button className="card" onClick={toggleModal}>
+			<span className="card-title">{title}</span>
+		</button>
 	);
 };

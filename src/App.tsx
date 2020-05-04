@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Header } from './components/Header/Header';
 import { Board } from './components/Board/Board';
 import './App.scss';
@@ -7,9 +7,6 @@ import { Modal } from './components/Modal/Modal';
 
 function App() {
 	const [isModalVisible, setModalVisible] = useState(false);
-
-	console.log('render');
-
 	const toggleModal: () => void = () => {
 		setModalVisible( !isModalVisible);
 	};

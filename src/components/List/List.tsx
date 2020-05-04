@@ -16,11 +16,12 @@ const List: FC<ListProps> = ({ title, toggleModal }) => {
 		<div className="list">
 			<ListHeader titleValue={title}/>
 
-
-			{
-				[{ title: 'Card 1' }, { title: 'Card 2' }]
-					.map(({ title }) => <Card toggleModal={toggleModal} key={title} title={title}/>)
-			}
+			<div className="list-card-container">
+				{
+					[{ title: 'Card 1' }, { title: 'Card 2' }]
+						.map(({ title }) => <Card toggleModal={toggleModal} key={title} title={title}/>)
+				}
+			</div>
 		</div>);
 
 };

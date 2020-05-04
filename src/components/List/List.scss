@@ -5,6 +5,15 @@
   width: 272px;
   background-color: #e0e3e7;
   margin: 5px;
+  height: fit-content;
 
+  .list-card-container {
+    // Todo: Flex or block ? Why.
+    display: flex;
+    flex-direction: column;
+    margin: 0 4px;
+    padding: 0 4px;
+
+  }
 
 }
