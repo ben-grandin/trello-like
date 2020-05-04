@@ -1,0 +1,27 @@
+.input-adder {
+  text-align: center;
+  display: flex;
+  padding: 5px;
+
+  .add-text {
+    font-size: small;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    .icon {
+      padding: 5px;
+      height: 20px;
+      font-size: 16px;
+      line-height: 20px;
+      width: 20px;
+    }
+
+    .text {
+      padding: 5px;
+
+      //max-height: 38px;
+      //min-height: 38px;
+    }
+  }
+}

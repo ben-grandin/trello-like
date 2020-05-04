@@ -2,6 +2,7 @@ import React, { EventHandler, FC } from 'react';
 import { ListHeader } from '../ListHeader/ListHeader';
 import './List.scss';
 import { Card } from '../Card/Card';
+import { InputAdder } from '../InputAdder/InputAdder';
 
 
 interface ListProps {
@@ -22,6 +23,8 @@ const List: FC<ListProps> = ({ title, toggleModal }) => {
 						.map(({ title }) => <Card toggleModal={toggleModal} key={title} title={title}/>)
 				}
 			</div>
+
+			<InputAdder>Ajouter une carte</InputAdder>
 		</div>);
 
 };
