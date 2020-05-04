@@ -1,5 +1,6 @@
 import React, { FC } from 'react';
 import { Modal } from '../../Modal/Modal';
+import { ListHeader } from '../../ListHeader/ListHeader';
 
 
 interface ModalCard {
@@ -14,7 +15,7 @@ export const ModalCard: FC<ModalCard> = ({ toggleModal, title = 'test', descript
 	return (
 		<Modal className="modal-card" toggleModal={toggleModal}>
 			<div>
-				{title && <h1 id="title">{title}</h1>}
+				{title && <ListHeader titleValue={title} className="title"/>}
 				{list && <span id="list">Dans la liste {list}</span>}
 			</div>
 			{description && <div>

@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, useCallback } from 'react';
 import './Modal.scss';
 
 
@@ -9,7 +9,35 @@ interface ModalProps {
 
 
 const Modal: FC<ModalProps> = ({ toggleModal, className, children }) => {
-	return (<div onClick={toggleModal} className={'parent-modal'}>
+	const modalRef = useCallback(inputElement => {
+		if( inputElement ) {
+			inputElement.focus();
+		}
+	}, []);
+
+	// ToDo: What the difference ?
+	//useRef<HTMLDivElement>(null);
+	// useEffect(() => {
+	// 	if( modalRef.current )
+	// 		modalRef.current.focus();
+	// });
+
+	const closeOnEscape = (e: any) => {
+		if( e.key === 'Escape' ) {
+			toggleModal();
+		}
+	};
+
+
+	return (<div className={'parent-modal'}
+				 tabIndex={0}
+				 ref={modalRef}
+				 onFocus={() => console.log('focus')}
+				 onClick={toggleModal}
+				 onKeyDown={closeOnEscape}
+
+
+		>
 			<div onClick={event => {event.stopPropagation();}} className={`modal ${className}`}>
 				{children}
 			</div>
