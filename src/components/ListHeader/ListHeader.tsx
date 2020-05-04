@@ -1,4 +1,4 @@
-import React, { FC, FormEvent, useState } from 'react';
+import React, { FC, FormEvent, useCallback, useState } from 'react';
 import './ListHeader.scss';
 
 
@@ -11,11 +11,22 @@ interface InputTitleProps {
 /*
 	ToDo:
 	 - Change input style,
-	 - Submit onEscape
+	 - Submit onClick
  */
 export const ListHeader: FC<InputTitleProps> = ({ titleValue, className = '' }) => {
+	const [tempTitle, setTempTitle] = useState(titleValue);
 	const [title, setTitle] = useState(titleValue);
 	const [showInput, setShowInput] = useState(false);
+
+	const inputRef = useCallback(inputElement => {
+		if( inputElement ) {
+			inputElement.focus();
+		}
+	}, []);
+	const onSubmitForm = () => {
+		setShowInput(false);
+		setTitle(tempTitle);
+	};
 
 	const toggleShowInput: (event: FormEvent) => void = (event) => {
 		event.preventDefault();
@@ -23,15 +34,25 @@ export const ListHeader: FC<InputTitleProps> = ({ titleValue, className = '' }) 
 	};
 
 	const onInputChange: ({ target: { value } }: { target: { value: string } }) => void = ({ target: { value } }) => {
-		setTitle(value);
+		setTempTitle(value);
 	};
+
+	const onEscapeInput = (e: any) => {
+		if( e.key === 'Escape' ) {
+			setTempTitle(title);
+			setShowInput(false);
+		}
+		e.stopPropagation();
+	};
+
 	return <div className={`list-header ${className}`}>
 		{ !showInput && <h4 onClick={toggleShowInput} className="list-title">{title}</h4>}
 
 		{
 			showInput &&
-            <form onSubmit={toggleShowInput}>
-                <input value={title} onChange={onInputChange} className='list-title'/>
+            <form onSubmit={onSubmitForm}>
+                <input ref={inputRef} value={tempTitle} onKeyDown={onEscapeInput} onChange={onInputChange}
+                       className='list-title'/>
             </form>
 		}
 	</div>;
