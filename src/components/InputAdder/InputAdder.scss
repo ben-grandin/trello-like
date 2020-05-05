@@ -1,13 +1,19 @@
+@import "src/components/Card/Card.scss";
+
 .input-adder {
   text-align: center;
   display: flex;
   padding: 5px;
 
+  div, form {
+    display: flex
+  }
+
   .add-text {
     font-size: small;
     width: 100%;
-    display: flex;
     justify-content: center;
+    flex-direction: column;
 
     .icon {
       padding: 5px;
